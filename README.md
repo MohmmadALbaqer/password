@@ -4,6 +4,7 @@
 $ git clone https://github.com/MohmmadALbaqer/password.git
 $ cd password
 $ pip3 install -r requirements.txt
+$ python3 install.py
 $ python3 pass.py
 
 ```
