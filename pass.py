@@ -1,30 +1,32 @@
 import random
+import os  
 from colorama import Fore, Style, init
-import pyfiglet
+from termcolor import colored
 
-init(autoreset=True)
+os.system("clear")
 
-def generate_colored_header(text):
-    text_colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
-    colored_header = ""
-    for char in text:
-        text_color = random.choice(text_colors)
-        colored_header += text_color + char
-    colored_header += Style.RESET_ALL  
-    return colored_header
+text = '''
+ ▄▄▄· ▄▄▄· .▄▄ · .▄▄ · ▄▄▌ ▐ ▄▌      ▄▄▄  ·▄▄▄▄    .▄▄ · ▄▄▄ . ▄▄· ▄• ▄▌▄▄▄  ▪  ▄▄▄▄▄ ▄· ▄▌
+▐█ ▄█▐█ ▀█ ▐█ ▀. ▐█ ▀. ██· █▌▐█ ▄█▀▄ ▀▄ █·██· ██   ▐█ ▀. ▀▄.▀·▐█ ▌▪█▪██▌▀▄ █·██ •██  ▐█▪██▌
+ ██▀·▄█▀▀█ ▄▀▀▀█▄▄▀▀▀█▄██▪▐█▐▐▌▐█▌.▐▌▐▀▀▄ ▐█▪ ▐█▌  ▄▀▀▀█▄▐▀▀▪▄██ ▄▄█▌▐█▌▐▀▀▄ ▐█· ▐█.▪▐█▌▐█▪
+▐█▪·•▐█▪ ▐▌▐█▄▪▐█▐█▄▪▐█▐█▌██▐█▌▐█▌.▐▌▐█•█▌██. ██   ▐█▄▪▐█▐█▄▄▌▐███▌▐█▄█▌▐█•█▌▐█▌ ▐█▌· ▐█▀·.
+.▀    ▀  ▀  ▀▀▀▀  ▀▀▀▀  ▀▀▀▀ ▀▪ ▀█▄▀▪.▀  ▀▀▀▀▀▀•    ▀▀▀▀  ▀▀▀ ·▀▀▀  ▀▀▀ .▀  ▀▀▀▀ ▀▀▀   ▀ • 
 
-header_text = "R 9 4 X S"
-lo = generate_colored_header(pyfiglet.figlet_format(header_text))
-print(lo)
+'''
 
-insta_text = (
-    "--------------------------------------------------\n"
-    f"|{Fore.RED}INSTAGRAM{Fore.YELLOW} ==> {Fore.CYAN}https://www.instagram.com/r94xs/{Style.RESET_ALL}   |\n"
-    "--------------------------------------------------"
-)
-print(insta_text)
+colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
 
-print("أروح فدوة لشعر خشمك دروح تابعني على الأنستكرام\n")
+random_color = random.choice(colors)
+
+colored_text = colored(text, random_color)
+print(colored_text)
+
+print(f'''
+ {Fore.RED}<--------------------------------------------------------------------->
+ {Fore.RED}|{Fore.GREEN} GitHub{Fore.WHITE} : {Fore.BLUE}MohmmadALbaqer {Fore.WHITE}|{Fore.YELLOW}   https://www.instagram.com/r94xs/        {Fore.RED}|
+ {Fore.RED}|{Fore.GREEN} Instagram{Fore.WHITE} :{Fore.BLUE} r94xs {Fore.WHITE}      |{Fore.YELLOW}   https://www.github.com/MohmmadALbaqer/  {Fore.RED}|
+ {Fore.RED}+---------------------------------------------------------------------+
+{Style.RESET_ALL}''')
 
 lower = "abcdefghijklmnopwrstuvwxyz"
 upper = "ABCEFGHIJKLMNOPQRSTUVWXYZ"
@@ -39,24 +41,24 @@ def generate_password(length):
 
 while True:
     try:
-        length = int(input("العزيز شكد تريد طول الرمز؟ :"))
+        length = int(input(f"{Fore.GREEN}[+] {Fore.BLUE}Enter how long you want the code {Fore.YELLOW}[5 - 25] :{Style.RESET_ALL}"))
     except ValueError:
-        print("أثول دخل الرمز صحيح.")
+        print(f"{Fore.YELLOW}[{Fore.RED}!{Fore.YELLOW}] {Fore.RED}Please enter the correct code.{Style.RESET_ALL}")
         continue
 
-    if length < 1:
-        print("مطي دخل رقم أكبر من 0 .")
+    if length < 5:
+        print(f"{Fore.RED}[!] Please enter a number greater than {Fore.YELLOW}4{Fore.WHITE}.{Style.RESET_ALL}")
         continue
 
     password = generate_password(length)
     
     if length <= 25:
-        print(Fore.GREEN + " Password==>: " + password + Style.RESET_ALL)
+        print(Fore.GREEN + "[*] Password: " + password + Style.RESET_ALL)
     else:
-        print(Fore.RED + "Password==>: " + password + Style.RESET_ALL)
+        print(Fore.RED + "[*] Password: " + password + Style.RESET_ALL)
 
-    response = input(" تريد تعيد بعد تسوي رمز ؟ (y/n): ")
+    response = input("[?] Do you want to try? (y/n): ")
 
     if response.lower() != "y":
         break
-print("يلة أدعبل منا")
+print(f"{Fore.BLUE}[+] {Fore.WHITE}Thank you")
