@@ -1,2 +1,4 @@
-pyfiglet
 colorama
+Style
+Fore
+termcolor
