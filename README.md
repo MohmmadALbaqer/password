@@ -1,24 +1,12 @@
-### Installation (Kali Linux & Termux)
+### Installation
 
 ```
 $ git clone https://github.com/MohmmadALbaqer/password.git
 $ cd password
 $ pip3 install -r requirements.txt
-$ python3 install.py
-$ python3 pass.py
+$ python3 PS.py
 
 ```
-
-
-
-### updateing tool
-```
-$ cd DDoSAttack
-$ git pull origin master
-
-```
-
-
 
 
 ## [~] Find Me on :
